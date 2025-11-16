@@ -1,3 +1,4 @@
+// To generate a static HTML file by rendering a React component into an HTML template without any client-side React runtime
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 
@@ -25,6 +26,7 @@ const distPath = path.join(__dirname, "dist");
 
 const shell = readFileSync(path.join(__dirname, "index.html"), "utf-8");
 
+// Render REACT component TO a STATIC markup string
 const app = renderToStaticMarkup(createElement(App));
 
 const html = shell.replace("<!--ROOT-->", app);
