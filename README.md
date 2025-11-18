@@ -13,3 +13,15 @@ Measure and ensure that the technique solves a specific performance problem, as 
 in CommonJS, `__dirname` automatically available.
 
 Use `fileURLToPath(import.meta.url)` to get the current directory path
+
+## SERVER SIDE RENDERING
+
+### `renderToString` and `renderToStaticMarkup`from react-dom/server
+
+- `renderToStaticMarkup`: use when there's no ADDITIONAL React information added to the string
+
+- `renderToString`: use when HAVE React metadata that it needed to hydrate back to client side, and all the Proper hooks, all of stuff it needs to take over on the client side. Use when intended to hydrating.
+
+if we don't want to add some React metadata, only static markup, but still use `renderToString`? 
+
+everything still worked just fine. It's just bigger than it need to be.
