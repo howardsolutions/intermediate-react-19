@@ -20,7 +20,10 @@ app.register(fastifyStatic, {
 });
 
 const parts = shell.split("<!--ROOT-->");
+
 app.get("/", (req, reply) => {
+  // flesh out the first part of the <head> tag 
+  // allow user to preload css , scripts,... as concurrent as possible
   reply.raw.write(parts[0]);
   const reactApp = renderToString(h(App));
   reply.raw.write(reactApp);
@@ -31,3 +34,7 @@ app.get("/", (req, reply) => {
 app.listen({
   port: 3000,
 });
+
+// here is exactly what you gonna do with SSR 
+// Flush the <head></head> first
+// send the app -> then send the rest part
