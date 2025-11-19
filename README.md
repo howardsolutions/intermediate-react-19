@@ -56,3 +56,11 @@ White space differences between server-rendered and client-side markup can cause
 ## What is the purpose of hydrateRoot in React?
 
 HydrateRoot assumes existing server-side rendered markup and takes over the app, making it interactive on the client side, as opposed to createRoot which completely replaces the interior content.
+
+## What is the difference between renderToString() and renderToPipeableStream() in React?
+
+renderToString() generates the entire rendering in one shot, while renderToPipeableStream() can output chunks of markup as different parts of the application render, potentially improving perceived performance
+
+## What happens if you add white space to the HTML during server-side rendering?
+
+Adding white space can change the hash of the initial render, which might cause hydration mismatches between the server-rendered content and the client-side React application
