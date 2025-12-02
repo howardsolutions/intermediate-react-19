@@ -83,3 +83,13 @@ A React server component is a component that ONLY renders on the server.
 
 - No matter how much of an interactive app you have, large swaths of it are inert markup, text, and content.
 You don't need React to generate HTML that shows a few headers and paragraphs.
+
+
+### the relationship between server and client components in terms of component hierarchy?
+
+Server components can be children of other server components,
+but client components cannot have server components as children. 
+If the top-level component is a client component, all of its children will also be client components.
+
+### the default rendering mode for React components in the new React architecture?
+By default, components are server components. Developers must explicitly opt into client components using the 'use client' directive when client-side interactivity or hooks are needed.
