@@ -64,3 +64,22 @@ renderToString() generates the entire rendering in one shot, while renderToPipea
 ## What happens if you add white space to the HTML during server-side rendering?
 
 Adding white space can change the hash of the initial render, which might cause hydration mismatches between the server-rendered content and the client-side React application
+
+## What are RSCs?
+
+- RSCs are not SSR 2.0.
+
+- This is a common misconception that I just want to dispel upfront: these things are relatively unrelated in the sense you can SSR without RSCs, RSCs without SSR, both, or neither!
+
+RSCs introduce the notion of a server to an ongoing React app. Whereas SSR renders the page once and then is no longer involved in the ongoing React app
+
+RSCs introduce the notion that the server continues to render PARTS of the app.
+
+An RSC is a component that only renders on the SERVER and sends its complete MARKUP to the app – the client-side app doesn't even have the code to render the component client-side - it can ONLY RECEIVE markup from a server and then insert that into the app.
+
+A React server component is a component that ONLY renders on the server.
+
+### Why is this useful?
+
+- No matter how much of an interactive app you have, large swaths of it are inert markup, text, and content.
+You don't need React to generate HTML that shows a few headers and paragraphs.
