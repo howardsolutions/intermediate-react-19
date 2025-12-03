@@ -93,3 +93,10 @@ If the top-level component is a client component, all of its children will also 
 
 ### the default rendering mode for React components in the new React architecture?
 By default, components are server components. Developers must explicitly opt into client components using the 'use client' directive when client-side interactivity or hooks are needed.
+
+### What is the role of createFromFetch in the client-side React application?
+
+- CreateFromFetch receives markup from the server and converts it into React components, enabling the client to render server-generated content dynamically.
+
+
+- Root.render can directly accept a promise created by createFromFetch, which waits for the server markup to be fetched before rendering the components, providing a seamless server-to-client rendering process.
